@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hello_world</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">hardik460</property>
+        
+        <!--SQL dialect-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!--Echo all executed SQL to stdout-->
+        <property name="show_sql">true</property>
+        
+        <!--Use XML-based mapping metadata-->
+        <!--<mapping resource="domain/Message.hbm.xml"/>-->
+        
+        <!--Use Annotation-based mapping metadata-->
+        <mapping class="entity.Message"/>
+        
+    </session-factory>
+</hibernate-configuration>
