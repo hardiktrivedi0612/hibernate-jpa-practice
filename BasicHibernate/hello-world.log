@@ -1,2 +1,17 @@
 18:17:22,778 DEBUG SQL:109 - insert into message (text) values (?)
 18:17:22,793 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello world with Hibernate & JPA]
+12:09:51,778 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+12:09:51,798 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:10:34,220 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+12:10:34,244 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:12:40,054 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+12:12:40,070 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:12:40,102 DEBUG SQL:109 - update message set text=? where id=?
+12:12:40,103 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Automatic Dirty Checking]
+12:12:40,103 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+12:14:20,736 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+12:14:20,757 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:14:20,802 DEBUG SQL:109 - delete from message where id=?
+12:14:20,802 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:15:02,928 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+12:15:02,948 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
