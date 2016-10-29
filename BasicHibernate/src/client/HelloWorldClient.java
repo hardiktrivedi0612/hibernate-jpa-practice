@@ -85,18 +85,45 @@ public class HelloWorldClient {
 //            }
 //        }
         //Start Mapping association - Many to one
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        Transaction txn = session.getTransaction();
+//        try {
+//            txn.begin();
+//
+//            Guide guide = new Guide("2000MO10789", "Mike Lawson", 1000);
+//            Student student = new Student("2014JT50123", "John Smith", guide);
+//
+//            session.save(guide);
+//            session.save(student);
+//
+//            System.out.println((Student) session.get(Student.class, 1L));
+//
+//            txn.commit();
+//        } catch (Exception e) {
+//            if (txn != null) {
+//                txn.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            if (session != null) {
+//                session.close();
+//            }
+//        }
+        //Start - Cascade Types PERIST and REMOVE
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction txn = session.getTransaction();
         try {
             txn.begin();
 
-            Guide guide = new Guide("2000MO10789", "Mike Lawson", 1000);
-            Student student = new Student("2014JT50123", "John Smith", guide);
+            // persisting Student object
+            Guide guide = new Guide("2000IM10901", "Ian Lamb", 2000);
+            Student student = new Student("2014AL50456", "Amy Gill", guide);
 
-            session.save(guide);
-            session.save(student);
+            session.persist(student);
 
-            System.out.println((Student) session.get(Student.class, 1L));
+            // deleting Student object
+            Student deletedDtudent = (Student) session.get(Student.class, 3L);
+            session.delete(deletedDtudent);
 
             txn.commit();
         } catch (Exception e) {
