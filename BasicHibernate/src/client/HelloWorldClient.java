@@ -5,7 +5,9 @@
  */
 package client;
 
+import entity.Address;
 import entity.Message;
+import entity.Person;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
@@ -29,19 +31,45 @@ public class HelloWorldClient {
 //        session.close();
 //        
         //Start: Manipulating Objects
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        Transaction txn = session.getTransaction();
+//        try {
+//            txn.begin();
+//            //Finding objects
+//            Message message = (Message) session.get(Message.class, 2L);
+////            System.out.println(message);
+//
+//            //Updating Objects
+////            message.setText("Automatic Dirty Checking");
+//            
+//            //Deleting objects
+//            session.delete(message);
+//
+//            txn.commit();
+//        } catch (Exception e) {
+//            if (txn != null) {
+//                txn.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            if (session != null) {
+//                session.close();
+//            }
+//        }
+
+        //Start Component Mapping and automatic create/update tables by hibernate
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction txn = session.getTransaction();
         try {
             txn.begin();
-            //Finding objects
-            Message message = (Message) session.get(Message.class, 2L);
-//            System.out.println(message);
 
-            //Updating Objects
-//            message.setText("Automatic Dirty Checking");
+            Address address = new Address("200 E Main St", "Seattle", "85123");
+            Person person = new Person("Ruby", address);
+
+            session.save(person);
             
-            //Deleting objects
-            session.delete(message);
+            Person samePerson = (Person) session.get(Person.class, 1L);
+            System.out.println(samePerson);
 
             txn.commit();
         } catch (Exception e) {

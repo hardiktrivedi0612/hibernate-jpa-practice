@@ -15,3 +15,15 @@
 12:14:20,802 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
 12:15:02,928 DEBUG SQL:109 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
 12:15:02,948 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+13:09:56,124 DEBUG SQL:109 - insert into Person (city, street, zipcode, name) values (?, ?, ?, ?)
+13:09:56,138 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Seattle]
+13:09:56,139 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+13:09:56,139 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
+13:09:56,139 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]
+13:11:34,501 DEBUG SQL:109 - insert into Person (city, street, zipcode, name) values (?, ?, ?, ?)
+13:11:34,515 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Seattle]
+13:11:34,516 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+13:11:34,516 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
+13:11:34,516 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]
+13:11:34,537 DEBUG SQL:109 - select person0_.id as id1_0_0_, person0_.city as city2_0_0_, person0_.street as street3_0_0_, person0_.zipcode as zipcode4_0_0_, person0_.name as name5_0_0_ from Person person0_ where person0_.id=?
+13:11:34,538 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
