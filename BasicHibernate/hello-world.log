@@ -27,3 +27,38 @@
 13:11:34,516 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]
 13:11:34,537 DEBUG SQL:109 - select person0_.id as id1_0_0_, person0_.city as city2_0_0_, person0_.street as street3_0_0_, person0_.zipcode as zipcode4_0_0_, person0_.name as name5_0_0_ from Person person0_ where person0_.id=?
 13:11:34,538 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+13:18:19,899 DEBUG SQL:109 - insert into Person (city, street, zipcode, name) values (?, ?, ?, ?)
+13:18:19,913 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Seattle]
+13:18:19,914 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+13:18:19,914 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
+13:18:19,915 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]
+13:18:19,934 DEBUG SQL:109 - select person0_.id as id1_0_0_, person0_.city as city2_0_0_, person0_.street as street3_0_0_, person0_.zipcode as zipcode4_0_0_, person0_.name as name5_0_0_ from Person person0_ where person0_.id=?
+13:18:19,935 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+13:22:36,554 DEBUG SQL:109 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+13:22:36,566 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+13:22:36,567 TRACE BasicBinder:81 - binding parameter [2] as [INTEGER] - [1000]
+13:22:36,568 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+13:22:36,590 DEBUG SQL:109 - insert into Student (enrollment_id, guide_id, name) values (?, ?, ?)
+13:22:36,591 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+13:22:36,592 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+13:22:36,593 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [John Smith]
+13:24:36,250 DEBUG SQL:109 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+13:24:36,267 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+13:24:36,267 TRACE BasicBinder:81 - binding parameter [2] as [INTEGER] - [1000]
+13:24:36,268 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+13:24:36,296 DEBUG SQL:109 - insert into Student (enrollment_id, guide_id, name) values (?, ?, ?)
+13:24:36,297 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+13:24:36,298 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+13:24:36,298 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [John Smith]
+13:24:36,402 DEBUG SQL:109 - select student0_.id as id1_2_0_, student0_.enrollment_id as enrollme2_2_0_, student0_.guide_id as guide_id4_2_0_, student0_.name as name3_2_0_, guide1_.id as id1_0_1_, guide1_.name as name2_0_1_, guide1_.salary as salary3_0_1_, guide1_.staff_id as staff_id4_0_1_ from Student student0_ left outer join Guide guide1_ on student0_.guide_id=guide1_.id where student0_.id=?
+13:24:36,404 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+13:25:18,788 DEBUG SQL:109 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+13:25:18,803 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+13:25:18,804 TRACE BasicBinder:81 - binding parameter [2] as [INTEGER] - [1000]
+13:25:18,805 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+13:25:18,817 DEBUG SQL:109 - insert into Student (enrollment_id, guide_id, name) values (?, ?, ?)
+13:25:18,817 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+13:25:18,818 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [3]
+13:25:18,818 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [John Smith]
+13:25:18,825 DEBUG SQL:109 - select student0_.id as id1_2_0_, student0_.enrollment_id as enrollme2_2_0_, student0_.guide_id as guide_id4_2_0_, student0_.name as name3_2_0_, guide1_.id as id1_0_1_, guide1_.name as name2_0_1_, guide1_.salary as salary3_0_1_, guide1_.staff_id as staff_id4_0_1_ from Student student0_ left outer join Guide guide1_ on student0_.guide_id=guide1_.id where student0_.id=?
+13:25:18,826 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]

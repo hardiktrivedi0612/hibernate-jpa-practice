@@ -11,28 +11,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 /**
  *
  * @author Hardik
  */
 @Entity
-@Table(name="message")
+@Table(name = "message")
 public class Message {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    
-    @Column(name="text")
+
+    @Column(name = "text")
     private String text;
-    
-    public Message() {}
-    
+
+    public Message() {
+    }
+
     public Message(String text) {
         this.text = text;
     }
-    
+
     public Long getId() {
         return id;
     }

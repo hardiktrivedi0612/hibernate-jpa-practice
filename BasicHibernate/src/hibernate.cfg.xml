@@ -23,14 +23,14 @@ and open the template in the editor.
         <!--Use XML-based mapping metadata-->
         <!--<mapping resource="domain/Message.hbm.xml"/>-->
         
-        <!--Use Annotation-based mapping metadata-->
-        <!--<mapping class="entity.Message"/>-->
-        
         <!-- Create/update tables automatically using mapping metadata -->
         <property name="hbm2ddl.auto">update</property>
          
         <!-- Use Annotation-based mapping metadata -->
         <mapping class="entity.Person"/>
+        <mapping class="entity.Message"/>
+        <mapping class="entity.Guide"/>
+        <mapping class="entity.Student"/>
         
     </session-factory>
 </hibernate-configuration>
