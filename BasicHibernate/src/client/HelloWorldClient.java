@@ -32,6 +32,9 @@ public class HelloWorldClient {
 //        session.getTransaction().commit();
 //        session.close();
 //        
+////        
+//        
+//        
         //Start: Manipulating Objects
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction txn = session.getTransaction();
@@ -59,6 +62,10 @@ public class HelloWorldClient {
 //            }
 //        }
 
+//        
+//        
+//        
+        
         //Start Component Mapping and automatic create/update tables by hibernate
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction txn = session.getTransaction();
@@ -84,6 +91,10 @@ public class HelloWorldClient {
 //                session.close();
 //            }
 //        }
+//        
+//        
+//        
+//        
         //Start Mapping association - Many to one
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction txn = session.getTransaction();
@@ -109,6 +120,10 @@ public class HelloWorldClient {
 //                session.close();
 //            }
 //        }
+//        
+//        
+//        
+//        
         //Start - Cascade Types PERIST and REMOVE
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction txn = session.getTransaction();
@@ -136,47 +151,52 @@ public class HelloWorldClient {
 //                session.close();
 //            }
 //        }
+//        
+//        
+//        
+//        
         //Start - One-to-many bidirectional relationship
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction txn = session.getTransaction();
-        try {
-            txn.begin();
-
-            //Normal insertion after doing a one-to-many bidirectional association 
-//            Guide guide1 = new Guide("2000MO10789", "Mike Lawson", 1000);
-//            Guide guide2 = new Guide("2000IM10901", "Ian Lamb", 2000);
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        Transaction txn = session.getTransaction();
+//        try {
+//            txn.begin();
 //
-//            Student student1 = new Student("2014JT50123", "John Smith", guide1);
-//            Student student2 = new Student("2014AL50456", "Amy Gill", guide1);
-//
-//            guide1.getStudents().add(student1);
-//            guide1.getStudents().add(student2);
-//
-//            session.persist(guide1);
-//            session.persist(guide2);
-            //Updating inverse end - has no effect
+//            //Normal insertion after doing a one-to-many bidirectional association 
+////            Guide guide1 = new Guide("2000MO10789", "Mike Lawson", 1000);
+////            Guide guide2 = new Guide("2000IM10901", "Ian Lamb", 2000);
+////
+////            Student student1 = new Student("2014JT50123", "John Smith", guide1);
+////            Student student2 = new Student("2014AL50456", "Amy Gill", guide1);
+////
+////            guide1.getStudents().add(student1);
+////            guide1.getStudents().add(student2);
+////
+////            session.persist(guide1);
+////            session.persist(guide2);
+//            //Updating inverse end - has no effect
+////            Guide guide = (Guide) session.get(Guide.class, 2L);
+////            Student student = (Student) session.get(Student.class, 2L);
+////            guide.getStudents().add(student);
+//            //Updating owner - has effect
+////            Guide guide = (Guide) session.get(Guide.class, 2L);
+////            Student student = (Student) session.get(Student.class, 2L);
+////            student.setGuide(guide);
+//            //Updating inverse end (after adding addStudent(Student) in Guide entity)
 //            Guide guide = (Guide) session.get(Guide.class, 2L);
-//            Student student = (Student) session.get(Student.class, 2L);
-//            guide.getStudents().add(student);
-            //Updating owner - has effect
-//            Guide guide = (Guide) session.get(Guide.class, 2L);
-//            Student student = (Student) session.get(Student.class, 2L);
-//            student.setGuide(guide);
-            //Updating inverse end (after adding addStudent(Student) in Guide entity)
-            Guide guide = (Guide) session.get(Guide.class, 2L);
-            Student student = (Student) session.get(Student.class, 1L);
-            guide.addStudent(student);
-            txn.commit();
-        } catch (Exception e) {
-            if (txn != null) {
-                txn.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-
+//            Student student = (Student) session.get(Student.class, 1L);
+//            guide.addStudent(student);
+//            txn.commit();
+//        } catch (Exception e) {
+//            if (txn != null) {
+//                txn.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            if (session != null) {
+//                session.close();
+//            }
+//        }
+        
+        
     }
 }
