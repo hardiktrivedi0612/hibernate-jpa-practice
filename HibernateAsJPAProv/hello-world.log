@@ -91,3 +91,30 @@
     values
         (?)
 18:57:32,084 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Howdy]
+19:07:37,118 DEBUG SQL:109 - 
+    select
+        message0_.ID as ID1_0_0_,
+        message0_.TEXT as TEXT2_0_0_ 
+    from
+        message message0_ 
+    where
+        message0_.ID=?
+19:07:37,133 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [7]
+19:08:14,842 DEBUG SQL:109 - 
+    select
+        message0_.ID as ID1_0_0_,
+        message0_.TEXT as TEXT2_0_0_ 
+    from
+        message message0_ 
+    where
+        message0_.ID=?
+19:08:14,858 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [7]
+19:08:14,889 DEBUG SQL:109 - 
+    select
+        message0_.ID as ID1_0_0_,
+        message0_.TEXT as TEXT2_0_0_ 
+    from
+        message message0_ 
+    where
+        message0_.ID=?
+19:08:14,889 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [7]
