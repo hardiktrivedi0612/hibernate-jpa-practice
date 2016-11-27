@@ -6,3 +6,88 @@
     values
         (?)
 18:37:05,637 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate as JPA Provider]
+18:55:04,002 DEBUG SQL:109 - 
+    insert 
+    into
+        message
+        (TEXT) 
+    values
+        (?)
+18:55:04,024 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello]
+18:55:04,071 DEBUG SQL:109 - 
+    update
+        message 
+    set
+        TEXT=? 
+    where
+        ID=?
+18:55:04,071 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello - test after persisting]
+18:55:04,071 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [6]
+18:56:23,281 DEBUG SQL:109 - 
+    insert 
+    into
+        message
+        (TEXT) 
+    values
+        (?)
+18:56:23,303 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello]
+18:56:23,403 DEBUG SQL:109 - 
+    select
+        message0_.ID as ID1_0_0_,
+        message0_.TEXT as TEXT2_0_0_ 
+    from
+        message message0_ 
+    where
+        message0_.ID=?
+18:56:23,418 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [7]
+18:56:23,504 DEBUG SQL:109 - 
+    update
+        message 
+    set
+        TEXT=? 
+    where
+        ID=?
+18:56:23,504 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hi]
+18:56:23,504 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [7]
+18:56:23,566 DEBUG SQL:109 - 
+    insert 
+    into
+        message
+        (TEXT) 
+    values
+        (?)
+18:56:23,566 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Howdy]
+18:57:31,800 DEBUG SQL:109 - 
+    insert 
+    into
+        message
+        (TEXT) 
+    values
+        (?)
+18:57:31,819 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello]
+18:57:31,937 DEBUG SQL:109 - 
+    select
+        message0_.ID as ID1_0_0_,
+        message0_.TEXT as TEXT2_0_0_ 
+    from
+        message message0_ 
+    where
+        message0_.ID=?
+18:57:31,937 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [9]
+18:57:32,022 DEBUG SQL:109 - 
+    update
+        message 
+    set
+        TEXT=? 
+    where
+        ID=?
+18:57:32,022 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hi]
+18:57:32,022 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [9]
+18:57:32,084 DEBUG SQL:109 - 
+    insert 
+    into
+        message
+        (TEXT) 
+    values
+        (?)
+18:57:32,084 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Howdy]
