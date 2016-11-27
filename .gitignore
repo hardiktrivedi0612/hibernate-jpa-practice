@@ -5,3 +5,4 @@ dist/
 nbdist/
 .nb-gradle/
 /BasicHibernate/nbproject/private/
+/HibernateAsJPAProv/nbproject/private/
