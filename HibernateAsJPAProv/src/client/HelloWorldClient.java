@@ -115,30 +115,70 @@ public class HelloWorldClient {
 //        
 //        
         //LAZY fetching
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello-world");
+//        EntityManager em = emf.createEntityManager();
+//        EntityTransaction txn = em.getTransaction();
+//        try {
+//            txn.begin();
+//
+//            //Lazy Collection Fetching with default settings(fetch=FetchType.LAZY for collection associations)
+////            Guide guide = em.find(Guide.class, 2L);
+////            Set<Student> students = guide.getStudents();
+////            int numberOfStudents = students.size();
+//
+//            //Eager Fetching with default settings (fetch=FetchType.EAGER for single point associations)
+//            Student student = em.find(Student.class, 2L);
+//            txn.commit();
+//        } catch (Exception e) {
+//            if (txn != null) {
+//                txn.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            if (em != null) {
+//                em.close();
+//            }
+//        }
+//        
+//        
+//        
+//        
+//        
+        //Equals and Hashcode
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello-world");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction txn = em.getTransaction();
-        try {
-            txn.begin();
 
-            //Lazy Collection Fetching with default settings(fetch=FetchType.LAZY for collection associations)
-//            Guide guide = em.find(Guide.class, 2L);
-//            Set<Student> students = guide.getStudents();
-//            int numberOfStudents = students.size();
-
-            //Eager Fetching with default settings (fetch=FetchType.EAGER for single point associations)
-            Student student = em.find(Student.class, 2L);
-            txn.commit();
-        } catch (Exception e) {
-            if (txn != null) {
-                txn.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+        //Guide with id=2L and Student with id=2L, both are  being managed by different EntityManager
+//        EntityManager em1 = emf.createEntityManager();
+//        em1.getTransaction().begin();
+//
+//        Student student = em1.find(Student.class, 2L);
+//
+//        em1.getTransaction().commit();
+//        em1.close();
+//
+//        EntityManager em2 = emf.createEntityManager();
+//        em2.getTransaction().begin();
+//
+//        Guide guide = em2.find(Guide.class, 2L);
+//        Set<Student> students = guide.getStudents();
+//
+//        System.out.println(students.contains(student)); // returns false as we are having no equals and hashcode and have different entity managers
+//
+//        em2.getTransaction().commit();
+//        em2.close();
+        //Guide with id=2L and Student with id=2L, both are  being managed by the same EntityManager
+//        EntityManager em = emf.createEntityManager();
+//        em.getTransaction().begin();
+//
+//        Student student = em.find(Student.class, 2L);
+//
+//        Guide guide = em.find(Guide.class, 2L);
+//        Set<Student> students = guide.getStudents();
+//
+//        System.out.println(students.contains(student)); // returns true as we have caching on entity manager level
+//
+//        em.getTransaction().commit();
+//        em.close();
 
     }
 }
