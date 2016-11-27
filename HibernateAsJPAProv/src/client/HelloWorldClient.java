@@ -1,11 +1,14 @@
 package client;
 
+import entity.Guide;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entity.Message;
+import entity.Student;
+import java.util.Set;
 
 public class HelloWorldClient {
 
@@ -76,36 +79,66 @@ public class HelloWorldClient {
 //        
 //        
 //        
-        //Caching objects - First level caching - entity manager level caching - happens by default
+//        //Caching objects - First level caching - entity manager level caching - happens by defaul
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello-world");
+//
+////        //First-level Caching
+////        EntityManager em = emf.createEntityManager();
+////
+////        em.getTransaction().begin();
+////
+////        Message message1 = em.find(Message.class, 7L);
+////        Message message2 = em.find(Message.class, 7L);
+////
+////        em.getTransaction().commit();
+////        em.close();
+//
+//        // Is First-level Caching still going work?
+//        EntityManager em1 = emf.createEntityManager();
+//        em1.getTransaction().begin();
+//
+//        Message message1 = em1.find(Message.class, 7L);
+//
+//        em1.getTransaction().commit();
+//        em1.close();
+//
+//        EntityManager em2 = emf.createEntityManager();
+//        em2.getTransaction().begin();
+//
+//        Message message2 = em2.find(Message.class, 7L);
+//
+//        em2.getTransaction().commit();
+//        em2.close();
+//        
+//        
+//        
+//        
+//        
+        //LAZY fetching
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello-world");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction txn = em.getTransaction();
+        try {
+            txn.begin();
 
-//        //First-level Caching
-//        EntityManager em = emf.createEntityManager();
-//
-//        em.getTransaction().begin();
-//
-//        Message message1 = em.find(Message.class, 7L);
-//        Message message2 = em.find(Message.class, 7L);
-//
-//        em.getTransaction().commit();
-//        em.close();
+            //Lazy Collection Fetching with default settings(fetch=FetchType.LAZY for collection associations)
+//            Guide guide = em.find(Guide.class, 2L);
+//            Set<Student> students = guide.getStudents();
+//            int numberOfStudents = students.size();
 
-        // Is First-level Caching still going work?
-        EntityManager em1 = emf.createEntityManager();
-        em1.getTransaction().begin();
-
-        Message message1 = em1.find(Message.class, 7L);
-
-        em1.getTransaction().commit();
-        em1.close();
-
-        EntityManager em2 = emf.createEntityManager();
-        em2.getTransaction().begin();
-
-        Message message2 = em2.find(Message.class, 7L);
-
-        em2.getTransaction().commit();
-        em2.close();
+            //Eager Fetching with default settings (fetch=FetchType.EAGER for single point associations)
+            Student student = em.find(Student.class, 2L);
+            txn.commit();
+        } catch (Exception e) {
+            if (txn != null) {
+                txn.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
 
     }
 }
