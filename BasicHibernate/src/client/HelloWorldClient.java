@@ -6,8 +6,10 @@
 package client;
 
 import entity.Address;
+import entity.Customer;
 import entity.Guide;
 import entity.Message;
+import entity.Passport;
 import entity.Person;
 import entity.Student;
 import org.hibernate.Session;
@@ -65,7 +67,6 @@ public class HelloWorldClient {
 //        
 //        
 //        
-        
         //Start Component Mapping and automatic create/update tables by hibernate
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction txn = session.getTransaction();
@@ -197,6 +198,28 @@ public class HelloWorldClient {
 //            }
 //        }
         
-        
+        //26th Nov
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction txn = session.getTransaction();
+        try {
+            txn.begin();
+
+            Passport passport = new Passport("925076473");
+            Customer customer = new Customer("Nicole Scott", passport);
+
+            session.persist(customer);
+
+            txn.commit();
+        } catch (Exception e) {
+            if (txn != null) {
+                txn.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
     }
 }

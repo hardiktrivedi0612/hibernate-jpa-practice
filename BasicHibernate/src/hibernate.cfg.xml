@@ -20,6 +20,9 @@ and open the template in the editor.
         <!--Echo all executed SQL to stdout-->
         <property name="show_sql">true</property>
         
+        <!-- Pretty print the SQL in the log file and console -->
+        <property name="format_sql">true</property>
+        
         <!--Use XML-based mapping metadata-->
         <!--<mapping resource="domain/Message.hbm.xml"/>-->
         
@@ -31,6 +34,8 @@ and open the template in the editor.
         <mapping class="entity.Message"/>
         <mapping class="entity.Guide"/>
         <mapping class="entity.Student"/>
+        <mapping class="entity.Customer"/>	
+        <mapping class="entity.Passport"/>
         
     </session-factory>
 </hibernate-configuration>
